@@ -34,28 +34,14 @@ Factory.blueprint('App/Models/Role', async (faker, i, data) => {
   }
 })
 
-// Spaces Factory
+// Posts Factory
 
-Factory.blueprint('App/Models/Space', async (faker) => {
+Factory.blueprint('App/Models/Post', async (faker) => {
+  const id = faker.integer({ min: 1, max: 300 });
   return {
-    name: faker.street(),
-    full_address: faker.address(),
+    name: faker.sentence(),
     description: faker.sentence(3),
+    body: faker.sentence(10),
+    hero_image_source: `https://picsum.photos/id/${id}/1920/1080`
   }
 })
-
-// TODO
-
-// SpaceEvents Factory
-
-// Factory.blueprint('App/Models/SpaceEvent', async (faker) => {
-//   return {
-//     name: faker.name(),
-//     description: faker.sentence(3),
-//     start: faker.date(),
-//     end: faker.date(),
-//     address_name: faker.named_location(),
-//     full_address: faker.address(),
-//     image_source: faker.URL(),
-//   }
-// })

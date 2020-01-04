@@ -23,13 +23,11 @@ Route.group(() => {
   Route.get('current-user', 'UserController.getCurrentUser');
   Route.get('users/:id', 'UserController.show');
 
-  Route.get('space-events', 'SpaceEventController.index');
-  Route.get('space-events/:id', 'SpaceEventController.show');
-  Route.get('space-events/:id/attendees', 'SpaceEventController.getAttendees');
-  Route.post('space-events', 'SpaceEventController.create');
-  Route.patch('space-events/:id', 'SpaceEventController.update');
-  Route.patch('space-events/:id/attending', 'SpaceEventController.updateAttending');
-  Route.delete('space-events/:id', 'SpaceEventController.destroy');
+  Route.get('posts', 'PostController.index');
+  Route.get('posts/:id', 'PostController.show');
+  Route.post('posts', 'PostController.create');
+  Route.patch('posts/:id', 'PostController.update');
+  Route.delete('posts/:id', 'PostController.destroy');
 
 })
   .prefix('api');

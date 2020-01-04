@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| SpaceSeeder
+| PostSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -13,14 +13,14 @@
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
 
-class SpaceSeeder {
+class PostSeeder {
   async run () {
 
     await Factory
-        .model('App/Models/Space')
-        .createMany(10)
+      .model('App/Models/Post')
+      .createMany(5)
 
   }
 }
 
-module.exports = SpaceSeeder
+module.exports = PostSeeder

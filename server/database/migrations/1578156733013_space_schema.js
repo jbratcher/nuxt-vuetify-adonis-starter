@@ -7,13 +7,6 @@ class SpaceSchema extends Schema {
   up () {
     this.create('spaces', (table) => {
       table.increments()
-      table.integer('user_id').unsigned().references('id').inTable('users')
-      table.string('name').notNullable()
-      table.text('full_address').notNullable()
-      table.text('short_address')
-      table.string('type')
-      table.text('description').notNullable()
-      table.integer('open_spaces')
       table.timestamps()
     })
   }

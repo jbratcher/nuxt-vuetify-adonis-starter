@@ -15,7 +15,7 @@
       <v-toolbar-title class="align-self-center d-flex align-center">
         <v-img class="invertColor" src="logo.svg" />
         <p class="toolbar-title-text">
-          GreenSpaces
+          {{ title }}
         </p>
       </v-toolbar-title>
       <v-spacer />
@@ -71,7 +71,7 @@
           class="primary lighten-2 py-4 text-center white--text"
           cols="12"
         >
-          {{ new Date().getFullYear() }} — <strong>Green Spaces</strong>
+          {{ new Date().getFullYear() }} — <strong>{{ title }}</strong>
         </v-col>
       </v-row>
     </v-footer>
@@ -140,7 +140,7 @@ export default {
         }
       ],
       miniVariant: false,
-      title: 'Green Spaces'
+      title: 'Nuxt Adonis Starter'
     }
   },
 }
@@ -227,9 +227,7 @@ export default {
   .gradient-overlay {
     background-image:
       linear-gradient(rgba(0,0,0,0.1),rgba(255,255,255,0.1)),
-      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),
-      url("../static/how-it-works.jpg");
-      background-position: center center;
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8));      background-position: center center;
   }
 
   .invertColor {
