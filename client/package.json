@@ -1,7 +1,7 @@
 {
-  "name": "green_spaces",
+  "name": "nuxt-adonis-starter",
   "version": "1.0.0",
-  "description": "Crowd-sourced tree planting for climate control",
+  "description": "Starter kit for Nuxt, Vuetify, and AdonisJS",
   "author": "jbratcher",
   "private": true,
   "scripts": {

@@ -3,7 +3,7 @@
     <!-- Header Area -->
     <v-app-bar
       app
-      color="rgba(0, 121, 107, 0.8)"
+      color="primary"
       dark
       elevate-on-scroll
       fixed
@@ -31,7 +31,6 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
-      class="teal"
       fixed
       dark
       app

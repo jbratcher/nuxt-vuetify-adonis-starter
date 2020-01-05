@@ -85,18 +85,18 @@ export default {
   */
   vuetify: {
     theme: {
-      light: true,
       dark: false,
+      light: true,
       themes: {
         light: {
-          primary: colors.teal.darken2,
-          accent: colors.teal.lighten1,
-          secondary: colors.lightGreen.darken3,
+          primary: colors.blueGrey.darken2,
+          accent: colors.blueGrey.lighten1,
+          secondary: colors.blue.darken3,
           info: colors.blueGrey.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-          background: colors.teal.base,
+          success: colors.blueGrey.accent3,
+          background: colors.blueGrey.base,
         }
       }
     }
