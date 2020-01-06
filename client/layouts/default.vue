@@ -31,6 +31,7 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
+      disable-resize-watcher
       fixed
       dark
       app
@@ -168,33 +169,8 @@ export default {
     word-break: break-word;
   }
 
-  .text-shadow {
-    text-shadow: 2px 2px 4px #000;
-  }
-
   .theme--dark.v-sheet {
     background-color: transparent;
-  }
-
-  .btn-box-shadow-primary {
-    box-shadow: 0 0 8px rgba(0, 121, 107, 0.8);
-
-    &:hover {
-      box-shadow: none;
-      transition: all 0.5s ease;
-    }
-
-  }
-
-  .btn-box-shadow-secondary {
-
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-
-    &:hover {
-      box-shadow: none;
-      transition: all 0.5s ease;
-    }
-
   }
 
   .v-icon.notranslate.mdi.mdi-menu.theme--dark {
@@ -221,16 +197,6 @@ export default {
   .justify-space-evenly {
     justify-content: space-around;
     justify-content: space-evenly;
-  }
-
-  .gradient-overlay {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.1),rgba(255,255,255,0.1)),
-      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8));      background-position: center center;
-  }
-
-  .invertColor {
-    filter: invert(1);
   }
 
   @media screen and (min-width: 768px) {
