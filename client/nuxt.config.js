@@ -1,6 +1,11 @@
+// use material design colors by name in vuetify below
 import colors from 'vuetify/es5/util/colors'
 
+
+// https://nuxtjs.org/guide/configuration/
 export default {
+  // https://nuxtjs.org/api/configuration-mode/
+  // options: 'spa', 'universal', default: 'universal'
   mode: 'universal',
   /*
   ** Headers of the page
@@ -13,6 +18,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
+    // add external stylesheets, libraries, and fonts here
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -25,6 +31,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/global.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -48,13 +55,13 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
-    '@nuxtjs/proxy',
   ],
   /*
   ** Nuxtjs auth module
   */
  auth: {
   strategies: {
+    // jwt
     local: {
       endpoints: {
         login: { url: 'api/auth/login', method: 'post', propertyName: 'token' },
@@ -73,15 +80,10 @@ export default {
     baseURL: 'http://localhost:3333/api',
   },
   /*
-  ** Proxy module configuration
-  ** See https://github.com/nuxt-community/proxy-module
-  */
-  proxy: {
-    // '/api': 'http://localhost:3333'
-  },
-  /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
+  ** https://vuetifyjs.com/en/customization/theme
+  ** https://vuetifyjs.com/en/styles/colors
   */
   vuetify: {
     theme: {

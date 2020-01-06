@@ -2,10 +2,12 @@
 
 ## A starter kit using Nuxt, Vuetify, and AdonisJS
 
-Current Features:
+#### Current Features:
 * User registration and login
+* Responsive media & typography
+* Axios API routes
 
-Getting Started
+#### Getting Started
 * git clone the repo
 * cd server and npm install
 * cp .env.example .env and add db info to .env
@@ -13,6 +15,7 @@ Getting Started
 * run adonis serve --dev from server folder
 * run npm dev from client folder
 
-Future Features:
+#### Future Features:
 
-Known bugs:
+#### Known bugs:
+* inital render css bug

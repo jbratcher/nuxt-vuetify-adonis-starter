@@ -13,7 +13,6 @@
       height="70px"
     >
       <v-toolbar-title class="align-self-center d-flex align-center">
-        <v-img class="invertColor" src="logo.svg" />
         <p class="toolbar-title-text">
           {{ title }}
         </p>
@@ -147,10 +146,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-  html, body {
-    overflow-x: hidden;
-  }
 
   .v-application ul {
     list-style-type: none;
