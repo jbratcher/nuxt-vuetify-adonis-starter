@@ -45,3 +45,11 @@ Factory.blueprint('App/Models/Post', async (faker) => {
     hero_image_source: `https://picsum.photos/id/${id}/1920/1080`
   }
 })
+
+// Examples Factory
+
+Factory.blueprint('App/Models/Example', async (faker) => {
+  return {
+    int: faker.integer()
+  }
+})

@@ -4,16 +4,15 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-const Post = use('App/Models/Post');
-const User = use('App/Models/User');
+const Example = use('App/Models/Example')
 
 /**
- * Resourceful controller for interacting with posts
+ * Resourceful controller for interacting with examples
  */
-class PostController {
+class ExampleController {
   /**
-   * Show a list of all posts.
-   * GET posts
+   * Show a list of all examples.
+   * GET examples
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -21,12 +20,12 @@ class PostController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    return await Post.all();
+    return await Example.all();
   }
 
   /**
-   * Render a form to be used for creating a new post.
-   * GET posts/create
+   * Render a form to be used for creating a new example.
+   * GET examples/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -35,34 +34,34 @@ class PostController {
    */
   async create ({ request, response, view }) {
     const user = await auth.getUser();
-    const { name, description, body, hero_image_source } = request.all();
-    const post = new Post();
-    post.fill({
+    const { name, description, body, image_source } = request.all();
+    const example = new Example();
+    example.fill({
       name,
       description,
       body,
-      hero_image_source,
+      image_source,
       author_id: user.id,
       author_name: user.full_name,
     });
-    await user.posts_authored().save(post);
-    return post;
+    await example.save()
+    return example;
   }
 
   /**
-   * Create/save a new post.
-   * POST posts
+   * Create/save a new example.
+   * POST examples
    *
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+    async store ({ request, response }) {
   }
 
   /**
-   * Display a single post.
-   * GET posts/:id
+   * Display a single example.
+   * GET examples/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -71,12 +70,12 @@ class PostController {
    */
   async show ({ params, request, response, view }) {
     const { id } = params;
-    return await Post.find(id);
+    return await Example.find(id);
   }
 
   /**
-   * Render a form to update an existing post.
-   * GET posts/:id/edit
+   * Render a form to update an existing example.
+   * GET examples/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -87,8 +86,8 @@ class PostController {
   }
 
   /**
-   * Update post details.
-   * PUT or PATCH posts/:id
+   * Update example details.
+   * PUT or PATCH examples/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -97,15 +96,15 @@ class PostController {
   async update ({ params, request, response }) {
     const user = await auth.getUser();
     const { id } = params;
-    const post = await Post.find(id);
-    post.merge(request.all('name', 'description', 'body', 'hero_image_source'));
-    await post.save();
-    return post;
+    const example = await Example.find(id);
+    example.merge(request.all('name', 'description', 'body', 'image_source'));
+    await example.save();
+    return example;
   }
 
   /**
-   * Delete a post with id.
-   * DELETE posts/:id
+   * Delete a example with id.
+   * DELETE examples/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -114,10 +113,10 @@ class PostController {
   async destroy ({ params, request, response }) {
     const user = await auth.getUser();
     const { id } = params;
-    const post = await Post.find(id);
-    await post.delete();
-    return post;
+    const example = await Example.find(id);
+    await example.delete();
+    return example;
   }
 }
 
-module.exports = PostController
+module.exports = ExampleController
